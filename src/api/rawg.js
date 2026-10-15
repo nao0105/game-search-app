@@ -1,6 +1,8 @@
+import Constants from 'expo-constants';
 import axios from 'axios';
 
-const RAWG_API_KEY = process.env.EXPO_PUBLIC_RAWG_API_KEY;
+const RAWG_API_KEY =
+  Constants?.expoConfig?.extra?.rawgApiKey || process.env.EXPO_PUBLIC_RAWG_API_KEY;
 
 if (!RAWG_API_KEY) {
   console.warn('RAWG API キーが設定されていません。 .env を確認してください。');
